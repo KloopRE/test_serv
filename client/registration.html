@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
 </head>
 
 <style>
@@ -31,23 +32,29 @@
 <body>
 <h1>Страница регистрации</h1>
 
-<div id="div_form">
-    <form id="form">
+<div method="POST">
+    <form id="form2">
+        <div class="form-label" >
+            <p id="name">Введите логин:</p>
+        </div>
 
         <label>
-            <input type="text" name="login" id = "my_login"  >
+            <input type="text" name="login" id = "login"  >
         </label>
 
+        <div class="form-label" >
+            <p id="adr">Введите пароль:</p>
+        </div>
+
         <label>
-            <input type="text" name="password" id = "my_password"  >
+            <input type="password" name="password" id = "password"  >
         </label>
         <label>
-            <button>Регистрация</button>
+            <button type = "submit">зарегистрироваться</button>
             </label>
     </form>
 </div>
 
-<script>
-</script>
+<script type="text/javascript" src="form2.js"></script>
 </body>
 </html>

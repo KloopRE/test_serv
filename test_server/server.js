@@ -13,12 +13,21 @@ serv.get('/', (request, response) => {response.sendFile(path.resolve('..', 'clie
 })
 
 serv.listen(PORT, () => {
-    console.log("Сервер начал напоботу, порт:" + PORT);
+    console.log("Сервер начал на порту, порт:" + PORT);
 })
 
-serv.get('/', (request, response) => {response.sendFile(path.resolve('..', 'client', 'login.html')) //Отправляем ответ серверу в виде html файла
+
+serv.get('/registration', (request, response) => {response.sendFile(path.resolve('..', 'client', 'registration.html')) //Отправляем ответ серверу в виде html файла
+})
+serv.post('/form2', (request, response) => {
+    const {login, password} = request.body
+    response.status(200).json(`${login} ${password}`)
+})
+
+serv.get('/login', (request, response) => {response.sendFile(path.resolve('..', 'client', 'login.html')) //Отправляем ответ серверу в виде html файла
 })
 serv.post('/form', (request, response) => {
     const {login, password} = request.body
     response.status(200).json(`${login} ${password}`)
 })
+
